@@ -1,40 +1,30 @@
-GitBook Sample Plugin
+Gitbook Typekit Plugin
 ==============
 
-This is a model for GitBook plugins.
+This is a plugin for adding [Typekit][6467-0001] to a [GitBook][6467-0002].
 
-## How GitBook plugin works?
+## How to
 
-A plugin for GitBook is a node package that can be published on [NPM](http://www.npmjs.org). It has to follow the name convention: `gitbook-plugin-*name*`.
+Add this to your book.json. You'll find your Typekit Kit ID in the Typekit Editor in _Embed Code_. 
 
-### package.json
+    "plugins": ["typekit@1.0.0"],
+    pluginsConfig: {
+        "typekit" : {
+            "kitID": "xxxXXX"
+        }
+    },
 
-#### name
+Font settings can be added to the Gitbook style CSSes.
 
-The package name should begin with ```gitbook-plugin-```.
+    "styles": {
+            "website": "styles/website.css",
+            "pdf": "styles/pdf.css",
+            "epub": "styles/epub.css",
+            "mobi": "styles/mobi.css"
+        },
 
-Examples: `gitbook-plugin-mixpanel`, `gitbook-plugin-googleanalytics`.
-
-#### engine
-
-The package.json should contain a `engine` field using [the standard norm](https://www.npmjs.org/doc/json.html#engines).
-
-```
-"engines": {
-    "gitbook": "*"
-}
-```
-
-For example if you want your plugin to supports only GitBook version supperior to 0.3.1:
-
-```
-"engines": {
-    "gitbook": ">=0.3.1"
-}
-```
-
-### entry point
-
-The plugin entry point should return an object with some metadata.
+Add CSS templates to your GitBook
+[6467-0001]: https://typekit.com/
+[6467-0002]: https://www.gitbook.com/
 
 

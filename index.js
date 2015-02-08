@@ -1,84 +1,26 @@
 module.exports = {
-    // Extend website resources and html
-    website: {
-        assets: "./book",
-        js: [
-            "test.js"
-        ],
-        css: [
-            "test.css"
-        ],
+    book: {
         html: {
-            "html:start": function() {
-                return "<!-- Start book "+this.options.title+" -->"
-            },
-            "html:end": function() {
-                return "<!-- End of book "+this.options.title+" -->"
-            },
+            "body:start": function() {
+                var config = this.options.pluginsConfig.typekit || {};
 
-            "head:start": "<!-- head:start -->",
-            "head:end": "<!-- head:end -->",
+                if (!config.kitID) {
+                    throw "Need to option 'kitID' for Typekit plugin";
+                }
 
-            "body:start": "<!-- body:start -->",
-            "body:end": "<!-- body:end -->"
-        }
-    },
+                if (!config.configuration) {
+                    config.configuration = 'auto';
+                }
 
-    // Extend ebook resources and html
-    website: {
-        assets: "./book",
-        js: [
-            "test.js"
-        ],
-        css: [
-            "test.css"
-        ],
-        html: {
-            "html:start": function() {
-                return "<!-- Start book "+this.options.title+" -->"
-            },
-            "html:end": function() {
-                return "<!-- End of book "+this.options.title+" -->"
-            },
+                if(typeof config.configuration === 'object' && config.configuration !== null) {
+                    configuration = JSON.stringify(config.configuration);
+                }
+                else if (['auto', 'none'].indexOf(config.configuration) != -1) {
+                    configuration = "'" + config.configuration + "'";
+                }
 
-            "head:start": "<!-- head:start -->",
-            "head:end": "<!-- head:end -->",
-
-            "body:start": "<!-- body:start -->",
-            "body:end": "<!-- body:end -->"
-        }
-    },
-
-    // Extend templating blocks
-    blocks: {
-        // Author will be able to write "{% myTag %}World{% endMyTag %}"
-        myTag: {
-            process: function(blk) {
-                return "Hello "+blk.body;
+                return "<script src='//use.typekit.net/"+config.kitID+"kij5crl.js'></script><script>try{Typekit.load();}catch(e){}</script>";
             }
-        }
-    },
-
-    // Extend templating filters
-    filters: {
-        // Author will be able to write "{{ 'test'|myFilter }}"
-        myFilter: function(s) {
-            return "Hello "+s;
-        }
-    },
-
-    // Hook process during build
-    hooks: {
-        // For all the hooks, this represent the current generator
-
-        // This is called before the book is generated
-        "init": function() {
-            console.log("init!");
-        },
-
-        // This is called after the book generation
-        "finish": function() {
-            console.log("finish!");
         }
     }
 };

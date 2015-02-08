@@ -1,18 +1,18 @@
 {
-    "name": "gitbook-plugin",
-    "description": "Sample plugin for GitBook",
+    "name": "gitbook-plugin-typekit",
+    "description": "Add Typekit to GitBook",
     "main": "index.js",
-    "version": "0.0.2",
+    "version": "0.0.1",
     "engines": {
         "gitbook": "*"
     },
-    "homepage": "https://github.com/GitbookIO/plugin",
+    "homepage": "https://github.com/kmelve/gitbook-plugin-typekit",
     "repository": {
         "type": "git",
-        "url": "https://github.com/GitbookIO/plugin.git"
+        "url": "https://github.com/kmelve/gitbook-plugin-typekit"
     },
     "license": "Apache 2",
     "bugs": {
-        "url": "https://github.com/GitbookIO/plugin/issues"
+        "url": "github.com/kmelve/gitbook-plugin-typekit/issues"
     }
 }
