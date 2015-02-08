@@ -7,7 +7,7 @@ This is a plugin for adding [Typekit][6467-0001] to a [GitBook][6467-0002].
 
 Add configuration to your `book.json`. You'll find your Typekit Kit ID in the Typekit Editor under the _Embed Code_ link>. 
 
-    "plugins": ["typekit@1.0.0"],
+    "plugins": ["typekit@0.0.1"],
     pluginsConfig: {
         "typekit" : {
             "kitID": "xxxXXX"
