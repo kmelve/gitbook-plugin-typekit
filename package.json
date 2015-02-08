@@ -9,7 +9,7 @@
     "homepage": "https://github.com/kmelve/gitbook-plugin-typekit",
     "repository": {
         "type": "git",
-        "url": "https://github.com/kmelve/gitbook-plugin-typekit"
+        "url": "https://github.com/kmelve/gitbook-plugin-typekit.git"
     },
     "license": "Apache 2",
     "bugs": {
