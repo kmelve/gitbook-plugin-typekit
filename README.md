@@ -3,9 +3,9 @@ Gitbook Typekit Plugin
 
 This is a plugin for adding [Typekit][6467-0001] to a [GitBook][6467-0002].
 
-## How to
+## How to use
 
-Add this to your book.json. You'll find your Typekit Kit ID in the Typekit Editor in _Embed Code_. 
+Add configuration to your `book.json`. You'll find your Typekit Kit ID in the Typekit Editor in _Embed Code_. 
 
     "plugins": ["typekit@1.0.0"],
     pluginsConfig: {
@@ -23,7 +23,6 @@ Font settings can be added to the Gitbook style CSSes.
             "mobi": "styles/mobi.css"
         },
 
-Add CSS templates to your GitBook
 [6467-0001]: https://typekit.com/
 [6467-0002]: https://www.gitbook.com/
 
