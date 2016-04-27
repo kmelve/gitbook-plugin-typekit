@@ -14,5 +14,14 @@
     "license": "Apache 2",
     "bugs": {
         "url": "github.com/kmelve/gitbook-plugin-typekit/issues"
+    },
+    "gitbook": {
+        "properties": {
+            "kitID": {
+                "type": "string",
+                "description": "Typekit Kit ID",
+                "required": true
+            }
+        }
     }
 }
