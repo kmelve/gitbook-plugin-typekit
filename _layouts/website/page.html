@@ -1,0 +1,7 @@
+{% extends template.self %}
+
+{% block body %}
+    <script src="//use.typekit.net/{{ config.pluginsConfig.typekit.kitID }}.js"></script>
+    <script>try{Typekit.load();}catch(e){}</script>
+    {{ super() }}
+{% endblock %}
